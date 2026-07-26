@@ -18,6 +18,8 @@ export default function App() {
     return () => window.removeEventListener('navigate-contact', handler);
   }, []);
 
+  const mainMaxWidth = activeView === 'portfolio' ? '1500px' : '1200px';
+
   return (
     <>
       <Header
@@ -25,7 +27,7 @@ export default function App() {
         onAboutClick={() => setActiveView('about')}
         onPortfolioClick={() => setActiveView('portfolio')}
       />
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 48px' }}>
+      <main style={{ maxWidth: mainMaxWidth, margin: '0 auto', padding: '0 24px 48px' }}>
         {activeView === 'about' ? (
           <section
             id="about"
