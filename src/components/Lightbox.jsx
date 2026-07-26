@@ -17,6 +17,24 @@ export default function Lightbox({ photos, currentIndex, onClose, onPrev, onNext
 
   const photo = photos[currentIndex];
 
+  const mediaNode = photo.type === 'video' ? (
+    <video
+      src={photo.src}
+      poster={photo.poster}
+      controls
+      autoPlay
+      muted
+      playsInline
+      style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+    />
+  ) : (
+    <img
+      src={photo.src}
+      alt={photo.alt}
+      style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+    />
+  );
+
   return (
     <div
       onClick={onClose}
@@ -47,11 +65,7 @@ export default function Lightbox({ photos, currentIndex, onClose, onPrev, onNext
         onClick={e => e.stopPropagation()}
         style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', maxHeight: 'calc(100vh - 120px)', width: '100%' }}
       >
-        <img
-          src={photo.src}
-          alt={photo.alt}
-          style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
-        />
+        {mediaNode}
       </div>
 
       {/* Controls */}

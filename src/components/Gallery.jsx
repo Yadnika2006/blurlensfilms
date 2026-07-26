@@ -19,20 +19,52 @@ export default function Gallery({ photos, onPhotoClick }) {
             background: '#111',
           }}
         >
-          <img
-            src={photo.src}
-            alt={photo.alt}
-            loading="lazy"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              display: 'block',
-              transition: 'transform 0.5s ease',
-            }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-          />
+          {photo.type === 'video' ? (
+            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+              <video
+                src={photo.src}
+                poster={photo.poster}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                  transition: 'transform 0.5s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.04)';
+                  e.currentTarget.play().catch(() => {});
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.pause();
+                  e.currentTarget.currentTime = 0;
+                }}
+              />
+              <span style={{ position: 'absolute', left: '12px', bottom: '12px', padding: '6px 10px', background: 'rgba(0,0,0,0.55)', color: '#fff', fontSize: '0.68rem', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+                MOV
+              </span>
+            </div>
+          ) : (
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              loading="lazy"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+                transition: 'transform 0.5s ease',
+              }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+            />
+          )}
         </div>
       ))}
     </div>

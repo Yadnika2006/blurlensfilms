@@ -9,7 +9,7 @@ export default function App() {
   const [activeView, setActiveView] = useState('portfolio');
   const [isAboutImageHovered, setIsAboutImageHovered] = useState(false);
   const total = photos.length;
-  const aboutPhotoSrc = '/images/logo.jpg?v=20260726';
+  const aboutPhotoSrc = '/images/1.png';
   const contactPhotoSrc = '/images/logo.jpg?v=20260726';
 
   React.useEffect(() => {
