@@ -49,7 +49,7 @@ export default function Header({ onAboutClick, onPortfolioClick, activeView }) {
   return (
     <header style={styles.header}>
       <a href="/" style={styles.logo}>blurlensfilms</a>
-      <p style={styles.tagline}>Editorial stories in light and color</p>
+      <p style={styles.tagline}>Editorial stories in light and colour</p>
       <nav style={styles.nav}>
         <button type="button" onClick={onAboutClick} style={{ ...styles.link, ...(activeView === 'about' ? styles.activeLink : null) }}>
           About Us
