@@ -25,6 +25,19 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check compulsory selection for video_type checkboxes
+    if (formRef.current) {
+      const checkedVideoTypes = formRef.current.querySelectorAll('input[name="video_type"]:checked');
+      if (checkedVideoTypes.length === 0) {
+        setStatusMessage({
+          type: 'error',
+          text: 'Please select at least one type of final video.',
+        });
+        return;
+      }
+    }
+
     setIsSending(true);
     setStatusMessage(null);
 
@@ -265,15 +278,14 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* 9. Message / Additional Requirements */}
+                {/* 9. Message / Additional Requirements (Optional) */}
                 <label style={{ display: 'block' }}>
                   <span style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px', color: '#444' }}>
-                    Message / Special Requirements *
+                    Message / Special Requirements (Optional)
                   </span>
                   <textarea
                     name="message"
                     rows="4"
-                    required
                     placeholder="Provide any details about dates, locations, or special requests..."
                     style={{ ...fieldStyle, resize: 'vertical', minHeight: '110px' }}
                   />
