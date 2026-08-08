@@ -88,7 +88,7 @@ export default function App() {
             }}
           >
             <p style={{ textAlign: 'center', color: '#1a1a1a', fontFamily: "'Cormorant Garamond', 'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 500, letterSpacing: '-0.01em', marginBottom: '22px' }}>
-              About BlurLensFilms
+              BlurLensFilms
             </p>
             <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
               <div style={{ width: 'fit-content', maxWidth: '100%', borderRadius: '4px', overflow: 'hidden' }}>
@@ -131,37 +131,6 @@ export default function App() {
                 <p style={{ lineHeight: 1.9, color: '#555', fontSize: '0.94rem', maxWidth: '600px', margin: '0 auto' }}>
                   Whether it&apos;s a once-in-a-lifetime celebration, a growing brand, or a simple moment worth remembering, BlurLensFilms is here to turn your moments into timeless frames.
                 </p>
-              </div>
-
-              <div style={{ marginTop: '36px', paddingTop: '28px', borderTop: '1px solid #eeeeee', textAlign: 'center' }}>
-                <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.74rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#8c7b60', marginBottom: '10px' }}>
-                  Get In Touch Directly
-                </p>
-                <a
-                  href="mailto:blurlensfilms@gmail.com"
-                  style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: '1.45rem',
-                    fontWeight: 500,
-                    color: '#1a1a1a',
-                    textDecoration: 'none',
-                    letterSpacing: '0.02em',
-                    borderBottom: '1.5px solid #1a1a1a',
-                    paddingBottom: '2px',
-                    display: 'inline-block',
-                    transition: 'color 0.2s ease, border-color 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#8c7b60';
-                    e.currentTarget.style.borderColor = '#8c7b60';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#1a1a1a';
-                    e.currentTarget.style.borderColor = '#1a1a1a';
-                  }}
-                >
-                  blurlensfilms@gmail.com
-                </a>
               </div>
             </div>
           </section>
@@ -364,8 +333,22 @@ export default function App() {
           onNext={() => setActiveIndex((activeIndex + 1) % total)}
         />
       )}
-      <footer style={{ textAlign: 'center', padding: '48px 24px', fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.7rem', color: '#8c8c8c', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-        &copy; 2024 blurlensfilms — All Rights Reserved
+      <footer style={{ textAlign: 'center', padding: '48px 24px', fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.7rem', color: '#8c8c8c', letterSpacing: '0.18em', textTransform: 'uppercase', display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+        <p>&copy; 2024 blurlensfilms — All Rights Reserved</p>
+        <p style={{ marginTop: '2px' }}>
+          <a
+            href="mailto:blurlensfilms@gmail.com"
+            style={{ color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = 'underline')}
+            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = 'none')}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            blurlensfilms@gmail.com
+          </a>
+        </p>
       </footer>
     </>
   );
