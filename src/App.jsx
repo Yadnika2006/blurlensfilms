@@ -87,9 +87,7 @@ export default function App() {
               paddingTop: '16px',
             }}
           >
-            <p style={{ textAlign: 'center', color: '#1a1a1a', fontFamily: "'Cormorant Garamond', 'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 500, letterSpacing: '-0.01em', marginBottom: '22px' }}>
-              BlurLensFilms
-            </p>
+            
             <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
               <div style={{ width: 'fit-content', maxWidth: '100%', borderRadius: '4px', overflow: 'hidden' }}>
                 <img
