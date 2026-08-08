@@ -38,7 +38,7 @@ export default function App() {
             }}
           >
             <p style={{ textAlign: 'center', color: '#1a1a1a', fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 400, marginBottom: '22px' }}>
-              About Me
+              About BlurLensFilms
             </p>
             <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
               <div style={{ width: 'min(100%, 760px)', borderRadius: '2px', overflow: 'hidden', boxShadow: '0 18px 45px rgba(0, 0, 0, 0.12)' }}>
@@ -61,14 +61,33 @@ export default function App() {
                 />
               </div>
             </div>
-            <div style={{ maxWidth: '520px', margin: '34px auto 0', textAlign: 'left' }}>
-              <p style={{ fontSize: '0.82rem', fontWeight: 700, marginBottom: '10px', color: '#222' }}>
-                Hey there, I&apos;m blurlensfilms.
+            <div style={{ maxWidth: '680px', margin: '34px auto 0', textAlign: 'center' }}>
+              <p style={{ fontSize: '1.05rem', fontWeight: 500, marginBottom: '24px', color: '#7a6a4d', fontStyle: 'italic', letterSpacing: '0.02em' }}>
+                We don’t just capture moments — we turn them into stories.
               </p>
-              <p style={{ lineHeight: 1.9, color: '#666', fontSize: '0.95rem' }}>
-                I make cinematic, clean, and natural-looking production work with a focus on strong light, honest emotion, and simple storytelling.
-                My style is built for portraits, events, and brand visuals that feel polished but still personal.
-              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', textAlign: 'left', lineHeight: 1.85, color: '#444', fontSize: '0.95rem' }}>
+                <p>
+                  Welcome to BlurLensFilms, a creative video and photography studio dedicated to capturing moments that deserve to be remembered.
+                </p>
+                <p>
+                  From weddings and special celebrations to fashion, events, brands and personal stories, we believe every frame has a story to tell. Our approach combines cinematic visuals, creative storytelling, authentic emotions and attention to detail to create photographs and films that feel as special years later as they did in the moment.
+                </p>
+                <p>
+                  At BlurLensFilms, we focus on more than just cameras and beautiful shots. We take the time to understand you, your vision and the story behind every project, so the final result feels personal and meaningful.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '40px', paddingTop: '28px', borderTop: '1px solid #eae5dc', textAlign: 'center' }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', fontWeight: 400, color: '#1a1a1a', marginBottom: '14px' }}>
+                  Our Vision
+                </h3>
+                <p style={{ fontSize: '1.02rem', fontStyle: 'italic', color: '#222', marginBottom: '16px', lineHeight: 1.6 }}>
+                  &ldquo;To create visuals that don&apos;t just look beautiful, but make you feel something.&rdquo;
+                </p>
+                <p style={{ lineHeight: 1.85, color: '#555', fontSize: '0.95rem', maxWidth: '600px', margin: '0 auto' }}>
+                  Whether it&apos;s a once-in-a-lifetime celebration, a growing brand, or a simple moment worth remembering, BlurLensFilms is here to turn your moments into timeless frames.
+                </p>
+              </div>
             </div>
           </section>
         ) : activeView === 'contact' ? (
