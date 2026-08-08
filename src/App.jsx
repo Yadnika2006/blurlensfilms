@@ -171,16 +171,10 @@ export default function App() {
                   <input type="email" name="from_email" required placeholder="Enter your email address" style={fieldStyle} />
                 </label>
 
-                {/* 4. Subject */}
-                <label style={{ display: 'block' }}>
-                  <span style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px', color: '#444' }}>Subject *</span>
-                  <input type="text" name="subject" required placeholder="Enter subject (e.g. Wedding Videography Inquiry)" style={fieldStyle} />
-                </label>
-
-                {/* 5. Type of Project */}
+                {/* 4. Type of Project (Serves as Email Subject) */}
                 <label style={{ display: 'block' }}>
                   <span style={{ display: 'block', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '8px', color: '#444' }}>Type of Project *</span>
-                  <select name="project_type" required style={selectStyle}>
+                  <select name="subject" required style={selectStyle}>
                     <option value="">Select Type of Project</option>
                     <option value="Wedding">Wedding</option>
                     <option value="Pre-wedding">Pre-wedding</option>
