@@ -54,9 +54,11 @@ export default function Header({ onAboutClick, onPortfolioClick, activeView }) {
         <button type="button" onClick={onAboutClick} style={{ ...styles.link, ...(activeView === 'about' ? styles.activeLink : null) }}>
           About Us
         </button>
+        {/* Portfolio tab temporarily hidden — uncomment to re-enable:
         <button type="button" onClick={onPortfolioClick} style={{ ...styles.link, ...(activeView === 'portfolio' ? styles.activeLink : null) }}>
           Portfolio
         </button>
+        */}
         <button type="button" onClick={() => window.dispatchEvent(new CustomEvent('navigate-contact'))} style={{ ...styles.link, ...(activeView === 'contact' ? styles.activeLink : null) }}>
           Contact
         </button>

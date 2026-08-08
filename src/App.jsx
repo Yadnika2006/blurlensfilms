@@ -7,7 +7,7 @@ import photos from './data/photos';
 
 export default function App() {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [activeView, setActiveView] = useState('portfolio');
+  const [activeView, setActiveView] = useState('about');
   const [isAboutImageHovered, setIsAboutImageHovered] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState(null);
@@ -340,14 +340,12 @@ export default function App() {
               </form>
             </div>
           </section>
-        ) : (
-          <>
-            <Gallery
-              photos={photos}
-              onPhotoClick={(index) => setActiveIndex(index)}
-            />
-          </>
-        )}
+        ) : activeView === 'portfolio' ? (
+          <Gallery
+            photos={photos}
+            onPhotoClick={(index) => setActiveIndex(index)}
+          />
+        ) : null}
       </main>
       {activeIndex !== null && (
         <Lightbox
