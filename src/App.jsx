@@ -359,7 +359,7 @@ export default function App() {
         />
       )}
       <footer style={{ textAlign: 'center', padding: '48px 24px', fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.7rem', color: '#8c8c8c', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-        &copy; 2026 blurlensfilms — All Rights Reserved
+        &copy; 2024 blurlensfilms — All Rights Reserved
       </footer>
     </>
   );
