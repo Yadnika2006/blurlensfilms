@@ -45,7 +45,7 @@ export default function Gallery({ photos, onPhotoClick }) {
                   e.currentTarget.currentTime = 0;
                 }}
               />
-              <span style={{ position: 'absolute', left: '12px', bottom: '12px', padding: '6px 10px', background: 'rgba(0,0,0,0.55)', color: '#fff', fontSize: '0.68rem', letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+              <span style={{ position: 'absolute', left: '12px', bottom: '12px', padding: '5px 10px', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)', borderRadius: '2px', color: '#fff', fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase' }}>
                 MOV
               </span>
             </div>

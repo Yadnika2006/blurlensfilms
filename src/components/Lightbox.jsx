@@ -74,7 +74,7 @@ export default function Lightbox({ photos, currentIndex, onClose, onPrev, onNext
         style={{ display: 'flex', alignItems: 'center', gap: '24px', padding: '20px 0 8px' }}
       >
         <button onClick={onPrev} style={btnStyle}>&#8592;</button>
-        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.78rem', letterSpacing: '0.1em' }}>
+        <span style={{ color: 'rgba(255,255,255,0.6)', fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.18em' }}>
           {currentIndex + 1} / {photos.length}
         </span>
         <button onClick={onNext} style={btnStyle}>&#8594;</button>
