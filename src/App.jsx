@@ -8,14 +8,12 @@ import photos from './data/photos';
 export default function App() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [activeView, setActiveView] = useState('about');
-  const [isAboutImageHovered, setIsAboutImageHovered] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState(null);
   const formRef = useRef();
 
   const total = photos.length;
-  const aboutPhotoSrc = '/images/1.png';
-  const contactPhotoSrc = '/images/logo.jpg?v=20260726';
+  const studioLogoSrc = '/images/logo.jpg?v=20260726';
 
   React.useEffect(() => {
     const handler = () => setActiveView('contact');
@@ -93,22 +91,16 @@ export default function App() {
               About BlurLensFilms
             </p>
             <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: 'min(100%, 760px)', borderRadius: '2px', overflow: 'hidden', boxShadow: '0 18px 45px rgba(0, 0, 0, 0.1)' }}>
+              <div style={{ width: 'fit-content', maxWidth: '100%', borderRadius: '4px', overflow: 'hidden' }}>
                 <img
-                  src={aboutPhotoSrc}
-                  alt="Portrait of blurlensfilms creator"
-                  onMouseEnter={() => setIsAboutImageHovered(true)}
-                  onMouseLeave={() => setIsAboutImageHovered(false)}
+                  src={studioLogoSrc}
+                  alt="BlurLensFilms Studio Logo"
                   style={{
-                    width: '100%',
-                    aspectRatio: '16 / 9',
-                    display: 'block',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    transform: isAboutImageHovered ? 'scale(1.03)' : 'scale(1)',
-                    transition: 'transform 260ms ease, filter 260ms ease',
-                    filter: isAboutImageHovered ? 'brightness(1.04) contrast(1.02)' : 'none',
-                    cursor: 'pointer',
+                    maxWidth: '100%',
+                    maxHeight: '360px',
+                    width: 'auto',
+                    height: 'auto',
+                    display: 'block'
                   }}
                 />
               </div>
@@ -140,6 +132,37 @@ export default function App() {
                   Whether it&apos;s a once-in-a-lifetime celebration, a growing brand, or a simple moment worth remembering, BlurLensFilms is here to turn your moments into timeless frames.
                 </p>
               </div>
+
+              <div style={{ marginTop: '36px', paddingTop: '28px', borderTop: '1px solid #eeeeee', textAlign: 'center' }}>
+                <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.74rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#8c7b60', marginBottom: '10px' }}>
+                  Get In Touch Directly
+                </p>
+                <a
+                  href="mailto:blurlensfilms@gmail.com"
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: '1.45rem',
+                    fontWeight: 500,
+                    color: '#1a1a1a',
+                    textDecoration: 'none',
+                    letterSpacing: '0.02em',
+                    borderBottom: '1.5px solid #1a1a1a',
+                    paddingBottom: '2px',
+                    display: 'inline-block',
+                    transition: 'color 0.2s ease, border-color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#8c7b60';
+                    e.currentTarget.style.borderColor = '#8c7b60';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#1a1a1a';
+                    e.currentTarget.style.borderColor = '#1a1a1a';
+                  }}
+                >
+                  blurlensfilms@gmail.com
+                </a>
+              </div>
             </div>
           </section>
         ) : activeView === 'contact' ? (
@@ -151,25 +174,10 @@ export default function App() {
               paddingTop: '16px',
             }}
           >
-            <p style={{ textAlign: 'center', color: '#1a1a1a', fontFamily: "'Cormorant Garamond', 'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 500, letterSpacing: '-0.01em', marginBottom: '8px' }}>
+            <p style={{ textAlign: 'center', color: '#1a1a1a', fontFamily: "'Cormorant Garamond', 'Playfair Display', serif", fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 500, letterSpacing: '-0.01em', marginBottom: '16px' }}>
               Contact Us
             </p>
-            <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: 'fit-content', maxWidth: '100%', borderRadius: '4px', overflow: 'hidden' }}>
-                <img
-                  src={contactPhotoSrc}
-                  alt="blurlensfilms contact visual"
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '360px',
-                    width: 'auto',
-                    height: 'auto',
-                    display: 'block'
-                  }}
-                />
-              </div>
-            </div>
-            <div style={{ maxWidth: '640px', margin: '36px auto 0' }}>
+            <div style={{ maxWidth: '640px', margin: '24px auto 0' }}>
               <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.76rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '8px', color: '#8c7b60', textAlign: 'center' }}>
                 Let&apos;s Create Together
               </p>
