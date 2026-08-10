@@ -12,6 +12,12 @@ const styles = {
     textDecoration: 'none',
     display: 'inline-block',
   },
+  logoImg: {
+    display: 'block',
+    margin: '0 auto 12px',
+    maxWidth: '260px',
+    height: 'auto',
+  },
   tagline: {
     fontFamily: "'Plus Jakarta Sans', sans-serif",
     fontSize: '0.74rem',
@@ -48,6 +54,7 @@ const styles = {
 export default function Header({ onAboutClick, onPortfolioClick, activeView }) {
   return (
     <header style={styles.header}>
+      <img src="/images/logo.jpg?v=20260726" alt="BlurLensFilms Studio Logo" style={styles.logoImg} />
       <a href="/" style={styles.logo}>blurlensfilms</a>
       <p style={styles.tagline}>Editorial stories in light and colour</p>
       <nav style={styles.nav}>

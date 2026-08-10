@@ -13,7 +13,7 @@ export default function App() {
   const formRef = useRef();
 
   const total = photos.length;
-  const studioLogoSrc = '/images/logo.jpg?v=20260726';
+  
 
   React.useEffect(() => {
     const handler = () => setActiveView('contact');
@@ -88,21 +88,6 @@ export default function App() {
             }}
           >
             
-            <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: 'fit-content', maxWidth: '100%', borderRadius: '4px', overflow: 'hidden' }}>
-                <img
-                  src={studioLogoSrc}
-                  alt="BlurLensFilms Studio Logo"
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '360px',
-                    width: 'auto',
-                    height: 'auto',
-                    display: 'block'
-                  }}
-                />
-              </div>
-            </div>
             <div style={{ maxWidth: '680px', margin: '36px auto 0', textAlign: 'center' }}>
               <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.3rem', fontWeight: 500, marginBottom: '28px', color: '#8c7b60', fontStyle: 'italic', letterSpacing: '0.01em' }}>
                 &ldquo;We don’t just capture moments — we turn them into stories.&rdquo;
@@ -177,6 +162,7 @@ export default function App() {
                   <select name="subject" required style={selectStyle}>
                     <option value="">Select Type of Project</option>
                     <option value="Wedding">Wedding</option>
+                    <option value="Photoshoot">Photoshoot</option>
                     <option value="Pre-wedding">Pre-wedding</option>
                     <option value="Corporate">Corporate</option>
                     <option value="Product">Product</option>
@@ -215,6 +201,7 @@ export default function App() {
                       'Cinematic Film',
                       'Documentary Style',
                       'Promotional Video',
+                      'Photoshoot',
                       'Other',
                     ].map((option) => (
                       <label key={option} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.88rem', color: '#333', cursor: 'pointer', userSelect: 'none' }}>
@@ -339,6 +326,39 @@ export default function App() {
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
             blurlensfilms@gmail.com
+          </a>
+        </p>
+        <p style={{ marginTop: '2px' }}>
+          <a
+            href="https://www.instagram.com/blurlensfilms?utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = 'underline')}
+            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = 'none')}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+            Instagram: @blurlensfilms
+          </a>
+        </p>
+        <p style={{ marginTop: '2px' }}>
+          <a
+            href="https://youtube.com/@blf1999?si=a8a_wzsZQlLbrPjX"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'inherit', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = 'underline')}
+            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = 'none')}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+              <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1-3-.2-7.5-.2-7.5-.2h-.1s-4.5 0-7.5.2c-.4.1-1.3.1-2.1 1C1.7 4.6 1.5 6.2 1.5 6.2S1 8 1 9.9v2.2c0 1.9.5 3.7.5 3.7s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.8.1 7.2.2 7.2.2s4.5 0 7.5-.2c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.5-1.8.5-3.7V9.9c0-1.9-.5-3.7-.5-3.7z" />
+              <path d="M9.8 14.6V7.4l6.2 3.6-6.2 3.6z" fill="#fff" />
+            </svg>
+            YouTube: @blf1999
           </a>
         </p>
       </footer>
